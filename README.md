@@ -5,4 +5,3 @@ SPUDSIM is a mechanistic, process level crop simulation model. The model simulat
 
 Current version is SPUDSIM v2-2 which includes simulation of surface residue decomposition, surface water runoff, gas diffusion in the soil, soil CO2,N2O fluxes, and ponding.
 
-Testing.
