@@ -1,0 +1,10 @@
+*** Example 12.3: Parameters of abiotic responce: file 'SetAbio.dat'
+Dehumification, mineralization, nitrification dependencies on moisture:
+dThH    dThL    es    Th_m
+0.100000      0.080000      0.600000      1.000000      
+Dependencies of temperature
+tb     QT
+25.000000     3.000000      
+Denitrification dependencies on water content
+dThD   Th_d
+0.100000      2.000000      
