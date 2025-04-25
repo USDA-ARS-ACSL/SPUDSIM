@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2F0BF3DF-01C1-4FFE-9000-A225D6E919D9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>spudsim2-2</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_USRDLL;CROP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OptimizeReferences>false</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo f | xcopy /y "$(TargetPath)" "$(SolutionDir)Soil Source\Debug\$(TargetFileName)"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_USRDLL;CROP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <Optimization>Full</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <Manifest>
+      <OutputManifestFile />
+    </Manifest>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName />
+    </ManifestResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CROP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>lightenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <Link>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);lightenv.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="controller.cpp" />
+    <ClCompile Include="cpmdate.cpp" />
+    <ClCompile Include="crop.cpp" />
+    <ClCompile Include="development.cpp" />
+    <ClCompile Include="gas_exchange_new.cpp" />
+    <ClCompile Include="initInfo.cpp" />
+    <ClCompile Include="leaf.cpp" />
+    <ClCompile Include="nodalunit.cpp" />
+    <ClCompile Include="organ.cpp" />
+    <ClCompile Include="plant.cpp" />
+    <ClCompile Include="radtrans.cpp" />
+    <ClCompile Include="roots.cpp" />
+    <ClCompile Include="solar.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="stem.cpp" />
+    <ClCompile Include="thermaltime.cpp" />
+    <ClCompile Include="timer.cpp" />
+    <ClCompile Include="tubers.cpp" />
+    <ClCompile Include="weather.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="controller.h" />
+    <ClInclude Include="cpmdate.h" />
+    <ClInclude Include="crop.h" />
+    <ClInclude Include="development.h" />
+    <ClInclude Include="gas_exchange_new.h" />
+    <ClInclude Include="initInfo.h" />
+    <ClInclude Include="leaf.h" />
+    <ClInclude Include="nitrogenstatus.h" />
+    <ClInclude Include="nodalunit.h" />
+    <ClInclude Include="organ.h" />
+    <ClInclude Include="plant.h" />
+    <ClInclude Include="radtrans.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="roots.h" />
+    <ClInclude Include="solar.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="stem.h" />
+    <ClInclude Include="thermaltime.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="tubers.h" />
+    <ClInclude Include="weather.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

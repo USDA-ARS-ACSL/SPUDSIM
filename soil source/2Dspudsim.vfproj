@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioProject ProjectCreator="Intel Fortran" Keyword="Application" Version="11.0" ProjectIdGuid="{47E5BB04-5527-4CE0-963E-B20D3D642C73}" SccProjectName="SAK" SccLocalPath="SAK" SccAuxPath="SAK" SccProvider="SAK">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration Name="Debug|Win32" UseCompiler="ifortCompiler" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
+			<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" InlineFunctionExpansion="expandOnlyInline" FavorSizeOrSpeed="favorSpeed" WarnTruncateSource="true" LocalSavedScalarsZero="true" CallingConvention="callConventionCVF" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebug"/>
+			<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\2Dspudsim.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="$(OutDir)" GenerateDebugInformation="true" ProgramDatabaseFile="$(OUTDIR)/soil.pdb" SubSystem="subSystemConsole" AdditionalDependencies="&quot;E:\spudsim v2-2\crop source\Debug\spudsim2-2.lib&quot;"/>
+			<Tool Name="VFResourceCompilerTool"/>
+			<Tool Name="VFMidlTool" SuppressStartupBanner="true" TypeLibraryName="$(OUTDIR)/soil.tlb"/>
+			<Tool Name="VFCustomBuildTool"/>
+			<Tool Name="VFPreLinkEventTool"/>
+			<Tool Name="VFPreBuildEventTool"/>
+			<Tool Name="VFPostBuildEventTool"/>
+			<Tool Name="VFManifestTool" SuppressStartupBanner="true"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" UseCompiler="ifortCompiler" DeleteExtensionsOnClean="*.obj;*.mod;*.pdb;*.asm;*.map;*.dyn;*.dpi;*.tmp;*.log;*.ilk;*.exe;$(TargetPath)">
+			<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" Optimization="optimizeFull" BufferedIO="true" Preprocess="preprocessYes" LocalSavedScalarsZero="true" CallingConvention="callConventionCVF" UninitializedVariablesCheck="true"/>
+			<Tool Name="VFLinkerTool" AdditionalOptions="/MACHINE:I386" OutputFile="$(OutDir)\2Dspudsim.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" ProgramDatabaseFile="$(OUTDIR)/soil.pdb" SubSystem="subSystemConsole" AdditionalDependencies="&quot;E:\SPUDSIM v2-2\crop source\Release\spudsim2-2.lib&quot;"/>
+			<Tool Name="VFResourceCompilerTool" PreprocessorDefinitions="NDEBUG"/>
+			<Tool Name="VFMidlTool" SuppressStartupBanner="true" TypeLibraryName="$(OUTDIR)/soil.tlb"/>
+			<Tool Name="VFCustomBuildTool"/>
+			<Tool Name="VFPreLinkEventTool"/>
+			<Tool Name="VFPreBuildEventTool"/>
+			<Tool Name="VFPostBuildEventTool"/>
+			<Tool Name="VFManifestTool" SuppressStartupBanner="true" VerboseOutput="true"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter Name="Header Files" Filter="fi;fd;h;inc">
+			<File RelativePath=".\nitvar.ins">
+			</File>
+			<File RelativePath=".\public.ins"/>
+			<File RelativePath=".\puplant.ins">
+			</File>
+			<File RelativePath=".\pusurface.ins">
+			</File>
+			<File RelativePath=".\puweath.ins">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
+		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
+			<File RelativePath=".\2DSPUDSIM.FOR">
+			</File>
+			<File RelativePath=".\AutoIrrigate.for"/>
+			<File RelativePath=".\carbon_partitioning.FOR"/>
+			<File RelativePath=".\dateFunctions.for"/>
+			<File RelativePath=".\drip.for"/>
+			<File RelativePath=".\ERRMES.FOR"/>
+			<File RelativePath=".\Ex14-5.for"/>
+			<File RelativePath=".\gasmov.for"/>
+			<File RelativePath=".\GRID_BND.FOR"/>
+			<File RelativePath=".\HEATMOV.FOR"/>
+			<File RelativePath=".\HourlyOut.for"/>
+			<File RelativePath=".\hourwea.for">
+			</File>
+			<File RelativePath=".\Init.for"/>
+			<File RelativePath=".\Irrigation.for"/>
+			<File RelativePath=".\MASSBLW.FOR"/>
+			<File RelativePath=".\MNGMB.FOR"/>
+			<File RelativePath=".\mulch_decomp.for"/>
+			<File RelativePath=".\N_Massbl.for"/>
+			<File RelativePath=".\ORTHOFEM.FOR"/>
+			<File RelativePath=".\OUTPUT.FOR"/>
+			<File RelativePath=".\PondingByFlux.for"/>
+			<File RelativePath=".\PondingByHead.for"/>
+			<File RelativePath=".\root_diff_new.for"/>
+			<File RelativePath=".\root_grow_c.FOR"/>
+			<File RelativePath=".\SETMAT01.FOR"/>
+			<File RelativePath=".\SetMatMulch.for"/>
+			<File RelativePath=".\SETSUR02.FOR"/>
+			<File RelativePath=".\SETTDB.FOR"/>
+			<File RelativePath=".\soilnden.for"/>
+			<File RelativePath=".\solmov.for"/>
+			<File RelativePath=".\solupt_Y1.for"/>
+			<File RelativePath=".\SurfaceMulchProcess.for"/>
+			<File RelativePath=".\surfaceWaterBalanceAdjustment.for"/>
+			<File RelativePath=".\SYNCHRON.FOR"/>
+			<File RelativePath=".\Tillage.for"/>
+			<File RelativePath=".\wateruptake.FOR"/>
+			<File RelativePath=".\Watmov.for"/>
+		</Filter>
+		<File RelativePath="..\crop source-Agmip2\Read Me.docx"/>
+	</Files>
+	<Globals/>
+</VisualStudioProject>

@@ -1,0 +1,38 @@
+*** EX4 Coefficient Calibration for Agmip 2017
+Ranger Russet
+Genetic Coefficients
+A1(T1) A2(T2) A3(LAI) A4(Srad) A5(Tamp) A6(Tamp) A7(Pd) A8(Pd) A9(N) A10(N) G1(Det) G2(Exp) G3(TGR) G4(SLW)
+1.700         0.070         100.000       1.000         1.000         2.000         1.100         2.100         1.200         0.800         0.500         450.000       20.000        0.004         
+[SoilRoot]
+*** WATER UPTAKE PARAMETER INFORMATION **************************
+RRRM       RRRY    RVRL
+166.700000    31.300000     0.730000      
+ ALPM    ALPY     RTWL    RtMinWtPerUnitArea
+0.35000000    0.04000000    0.00010600    0.00020000    
+[RootDiff]
+*** ROOT MOVER PARAMETER INFORMATION **************************
+EPSI        lUpW             CourMax
+1.000000      1.000000      1.000000      
+Diffusivity and geotropic velocity
+0.500000      0.500000      0.500000      
+[SoilNitrogen]
+*** NITROGEN ROOT UPTAKE PARAMETER INFORMATION **************************
+ISINK    Rroot         
+1.000000      0.017000      
+ConstI   Constk     Cmin0 
+35.000000     0.500000      0.010000      
+17.300000     0.750000      0.030000      
+[Gas_Exchange Species Parameters] 
+**** for photosynthesis calculations ***
+EaVp    EaVc    Eaj     Hj      Sj     Vpm25   Vcm25    Jm25    Rd25    Ear       g0    g1
+75100   55900   32800   220000  702.6   70      50       300    2       39800   0.017   4.53
+*** Second set of parameters for Photosynthesis ****
+f (spec_correct)     scatt  Kc25    Ko25    Kp25    gbs         gi      gamma1
+0.15                 0.15   650      450    80      0.003       1       0.193
+**** Third set of photosynthesis parameters ****
+Gamma_gsw  sensitivity (sf) Reference_Potential_(phyla, bars) stomaRatio widthFact lfWidth (m)
+  10.0        2.3               -1.2                             1.0        0.72   0.050
+**** Secondary parameters for miscelanious equations ****
+internal_CO2_Ratio   SC_param      BLC_param
+0.7                   1.57           1.36
+
