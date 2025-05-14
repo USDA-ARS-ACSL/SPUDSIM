@@ -14,6 +14,11 @@
 #define FLOAT_EQ(x,v) (((v - EPSILON) < x) && (x <( v + EPSILON)))
 #endif
 #define comma ","
+#ifdef _WIN32
+const char* pathSymbol = "\\";
+#else
+const char* pathSymbol = "/";
+#endif
 
 inline double E_sat(double T) { return 0.6105 * exp(17.27 * T / (237.7 + T)); }
 
