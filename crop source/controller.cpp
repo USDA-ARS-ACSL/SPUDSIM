@@ -40,45 +40,28 @@ CController::CController(const char* filename, const char* outfile, TInitInfo in
 	strcpy_s(varietyFile, filename);
 	strcpy_s(cropFile, outfile);
 
-	char* pathSymbol = (char*)calloc(256, sizeof(char));
-	pathSymbol = (char*)"/\\"; //for both linux and windwos
-	std::string plantstressFile = "plantstress.crp";
-	std::string nitrogenFile = "nitrogen.crp";
+	//char* pathSymbol = (char*)calloc(256, sizeof(char));
+	//pathSymbol = (char*)"/\\"; //for both linux and windwos
+
 	std::string basePath;
 	std::size_t found;
 	std::string cropFileAsString = cropFile;
 	// find last path separator and break path from file name	
-	found = cropFileAsString.find_last_of(pathSymbol);
-	basePath = cropFileAsString.substr(0, found);
+	found = cropFileAsString.find_last_of("/\\");
 	// now get filename to use as a root
-	std::string fileName = cropFileAsString.substr(found + 1);
-	std::string root = fileName.substr(0, fileName.length() - 3);
-
-	//size = strlen(outfile);
-	//for (int i=size ;i>0;i--) //extract file location for graphics folder
-	//{
-	//	if (outfile[i] == '\\')
-	//	{
-	//		strncpy_s(directory, outfile, i+1);
-			//strcpy_s(archFile, directory);
-			//strcpy_s(leafFile, directory);
-	//		strcpy_s(nitrogenFile, directory);
-	//		strcpy_s(plantstressFile, directory);
-			//string temp = archFile;
-			//temp.insert(strlen(archFile),a);
-			//strcpy_s(archFile,temp.c_str());
-			//temp = leafFile;
-			//temp.insert(strlen(leafFile),l);
-			//strcpy_s(leafFile,temp.c_str());
-	//		string temp = nitrogenFile;
-	//		temp.insert(strlen(nitrogenFile),n);
-	//		strcpy_s(nitrogenFile,temp.c_str());
-	//		temp = plantstressFile;
-	//		temp.insert(strlen(plantstressFile), p);
-	//		strcpy_s(plantstressFile, temp.c_str());
-	//		break;
-	//	}
-	// }
+	std::string fileName;
+	std::string root;
+	if (found != std::string::npos) {
+		basePath = cropFileAsString.substr(0, found);
+	}
+	else {
+		basePath = "."; // fallback to current directory if no separator found
+	}
+	fileName = cropFileAsString.substr(found + 1);
+	root = fileName.substr(0, fileName.length() - 3);
+	// make filenames with path for the corpstress and nitrogen files	
+	plantstressFile = basePath + pathSymbol + p;
+	nitrogenFile = basePath + pathSymbol + n;
 
 	iCur = 0;
 	weatherFormat = ICASA;

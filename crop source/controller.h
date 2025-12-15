@@ -25,8 +25,10 @@ private:
 	int	firstDayOfSim = 0,	lastDayOfSim = 0, SowingDay = 0, EmergenceDay = 0;
 	char varietyFile[218], outputFile[11], cropFile[218], logFile[216];
 	double lwp_dawn;
-	char archFile[133], leafFile[133], nitrogenFile[133], plantstressFile[133], directory[133];
+	char archFile[133], leafFile[133], directory[133];
 	//char weatherFile[120], varietyFile[120], outputFile[120], cropFile[120], logFile[120];
+	std::string plantstressFile;
+	std::string nitrogenFile;
 	int iCur = 0 , // current record number
 		errorFlag = 0; // 1 if problem, 0 if not
 
