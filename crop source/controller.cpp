@@ -127,7 +127,9 @@ void CController::initialize()
 			<< setw(8) << "Nstress2" << comma
 			<< setw(8) << "Wstress1" << comma
 			<< setw(8) << "Wstress2" << comma
-			<< setw(8) << "Wstress3" 
+			<< setw(8) << "Wstress3" << comma
+			<< setw(8) << "NUpt" << comma
+			<< setw(8) << "N_Dem"
 		    << endl;
 		//ofstream canOut(archFile, ios::out);
 		//canOut << setiosflags(ios::right) << setiosflags(ios::fixed)
@@ -435,7 +437,9 @@ void CController::outputToCropFile()
 			<< setw(8) << setprecision(3) << plant->get_waterstressfactor() << comma// canopy senescence factor
 			//<< setw(8) << setprecision(3) << plant->get_develop()->get_partub() << comma
 			<< setw(8) << setprecision(3) << plant->get_psistress_gs_factor() << comma//bulk leaf water potential stress on Pn
-			<< setw(8) << setprecision(3) << plant->get_nodalUnit()->get_leaf()->get_psi_leafexpansion_stress() // bulk leaf water potential stress on leaf expansion
+			<< setw(8) << setprecision(3) << plant->get_nodalUnit()->get_leaf()->get_psi_leafexpansion_stress() << comma // bulk leaf water potential stress on leaf expansion
+			<< setw(8) << setprecision(3) << plant->get_CumulativeNitrogenSoilUptake() << comma//total N uptake, cumulative, g N plant-1
+			<< setw(8) << setprecision(3) << plant->get_CumulativeNitrogenDemand() //total N demand, cumulative, g  plant-1
 			<< endl;
 	}
 	else //hourly output
@@ -496,7 +500,9 @@ void CController::outputToCropFile()
 			<< setw(8) << setprecision(3) << plant->get_waterstressfactor() << comma// canopy senescence factor
 			//<< setw(8) << setprecision(3) << plant->get_develop()->get_partub()<< comma
 			<< setw(8) << setprecision(3) << plant->get_psistress_gs_factor() << comma //bulk leaf water potential stress on Pn
-			<< setw(8) << setprecision(3) << plant->get_nodalUnit()->get_leaf()->get_psi_leafexpansion_stress() // bulk leaf water potential stress on leaf expansion
+			<< setw(8) << setprecision(3) << plant->get_nodalUnit()->get_leaf()->get_psi_leafexpansion_stress() << comma // bulk leaf water potential stress on leaf expansion
+			<< setw(8) << setprecision(3) << plant->get_CumulativeNitrogenSoilUptake() << comma//total N uptake, cumulative, g N plant-1
+			<< setw(8) << setprecision(3) << plant->get_CumulativeNitrogenDemand() //total N demand, cumulative, g  plant-1
 
 
 
