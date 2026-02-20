@@ -1,5 +1,5 @@
-# Ignore output directories
-output/
+# Ignore output directories (but not source code)
+/output/
 *.csv
 *.json
 *.h5
