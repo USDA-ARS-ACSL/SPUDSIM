@@ -1,13 +1,14 @@
 """
 Example usage of SPUDSIM streamlined output system
+
+Before running this example, install the package in development mode:
+    pip install -e .
+
+Or add the package to your PYTHONPATH:
+    export PYTHONPATH="${PYTHONPATH}:$(pwd)"
 """
 
-import sys
-from pathlib import Path
 import random
-
-# Add parent directory to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from spudsim.output import OutputManager, OutputConfig
 from spudsim.output.config import OutputFormat, OutputFrequency

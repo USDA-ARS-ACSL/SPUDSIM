@@ -1,5 +1,11 @@
 """
 Unit tests for SPUDSIM output functionality
+
+To run tests:
+    python -m pytest tests/test_output.py -v
+    
+Or:
+    python tests/test_output.py
 """
 
 import unittest
@@ -10,8 +16,10 @@ from pathlib import Path
 import json
 import csv
 
-# Add parent directory to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Add parent directory to path for direct script execution
+# When installed properly (pip install -e .), this is not needed
+if __name__ == '__main__':
+    sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from spudsim.output import OutputManager, OutputConfig
 from spudsim.output.config import OutputFormat, OutputFrequency

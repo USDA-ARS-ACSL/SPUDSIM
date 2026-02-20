@@ -27,8 +27,14 @@ SPUDSIM includes a modern, efficient data output system:
 git clone https://github.com/USDA-ARS-ACSL/SPUDSIM.git
 cd SPUDSIM
 
-# Install dependencies (optional)
-pip install h5py netCDF4
+# Install in development mode
+pip install -e .
+
+# Optional: Install additional format support
+pip install -e ".[all]"  # Install all optional dependencies
+# Or install specific formats:
+pip install h5py  # For HDF5 support
+pip install netCDF4  # For NetCDF support
 ```
 
 ## Quick Start

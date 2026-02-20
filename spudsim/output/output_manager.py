@@ -7,7 +7,7 @@ import csv
 import json
 from pathlib import Path
 from typing import Dict, List, Any, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 import logging
 
 from .config import OutputConfig, OutputFormat
@@ -35,7 +35,7 @@ class OutputManager:
             run_id: Unique identifier for this model run
         """
         self.config = config
-        self.run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.run_id = run_id or datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
         self.output_dir = Path(config.output_dir) / self.run_id
         
         # Create output directory
@@ -47,7 +47,7 @@ class OutputManager:
         # Track metadata
         self.metadata: Dict[str, Any] = {
             'run_id': self.run_id,
-            'start_time': datetime.now().isoformat(),
+            'start_time': datetime.now(timezone.utc).isoformat(),
             'config': config.to_dict()
         }
         
@@ -102,7 +102,7 @@ class OutputManager:
         
         # Write metadata
         if self.config.include_metadata:
-            self.metadata['end_time'] = datetime.now().isoformat()
+            self.metadata['end_time'] = datetime.now(timezone.utc).isoformat()
             self._write_metadata()
         
         logger.info(f"Finalized output for run {self.run_id}")
