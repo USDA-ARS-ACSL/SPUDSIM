@@ -86,8 +86,8 @@
 	LCAI,Cover, Convr;
 	float MaxRootDepth,Shade,Height,LAI,AWUPS, NitroDemand;
 	float xBStem,yBStem,SGT,PSIM,
-    LAREAT,PopRow,RowSp,RowAng,PopArea,COREC,
-    ESCS,AWUPSS,SolRad,Total_Eor,
+    LAREAT,PopRow,RowSp,RowAng,PopArea,CEC,
+    EORSCS,AWUPSS,SolRad,Total_Eor,
     Total_Pcrs,SIncrSink,Psild,
     OsmFac, EOMult,psil_, NDemandError, CumulativeNDemandError, 
 	TotalRootWeight, InitialRootCarbo,ConstI[2], constK[2], Cmin0[2];
@@ -136,13 +136,12 @@
 
 //elements
  struct ElementCommon {
-
+	 int    MatNumE[NumElD];
 	 float Sink[NumNPD], cSink[NumSD][NumNPD],
 		 gSink[NumGD][NumNPD], tSink[NumNPD],
 		 RTWT[NumNPD],
 		 RMassM[NumNPD], RDenM[NumNPD],
 		 RMassY[NumNPD], RDenY[NumNPD];
-	 int    MatNumE[NumElD];
 	 float gSink_OM[NumGD][NumNPD], cSink_OM[NumGD][NumNPD],
 		 gSink_root[NumGD][NumNPD], gSink_rootY[NumGD][NumNPD],
 		 gSink_rootM[NumGD][NumNPD], gSink_N2O[NumGD][NumNPD];
